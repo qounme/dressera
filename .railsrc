@@ -1,0 +1,10 @@
+--skip-git
+--skip-action-mailer
+--skip-action-mailbox
+--skip-action-text
+--skip-jbuilder
+--skip-test
+--skip-system-test
+--skip-ci
+--skip-kamal
+--css=tailwind

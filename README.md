@@ -26,12 +26,12 @@ cd dressera
 
 2. Build the Docker image
 ```bash
-docker build -f Dockerfile.dev -t dressera-dev .
+make build
 ```
 
 3. Run the application
 ```bash
-docker run -it --rm -p 3000:3000 --mount type=bind,source=$(pwd),target=/rails dressera-dev
+make run
 ```
 
 4. Access the application at http://localhost:3000
@@ -61,5 +61,5 @@ The development server runs with live reloading for both Ruby code and CSS chang
 If you need to add new gems, you'll need to rebuild the Docker image after updating the Gemfile:
 
 ```bash
-docker build -f Dockerfile.dev -t dressera-dev .
+make build
 ```

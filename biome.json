@@ -1,0 +1,16 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.2.6/schema.json",
+  "vcs": {
+    "useIgnoreFile": true
+  },
+  "files": {
+    "includes": [
+      "**/*.css",
+      "**/*.js"
+    ]
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "lineWidth": 120
+  }
+}

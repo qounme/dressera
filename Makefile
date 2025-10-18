@@ -1,4 +1,4 @@
-.PHONY: help build run setup bundle rails
+.PHONY: help build run bundle rails setup biome
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -30,6 +30,9 @@ setup: ## Setup host environment for editor support (creates separate lockfile i
 	bundle config set --local lockfile .bundle/Gemfile_host.lock
 	cp Gemfile.lock .bundle/Gemfile_host.lock
 	bundle install
+
+biome: ## Format and lint JS/CSS files with Biome
+	npx @biomejs/biome check --write .
 
 # Dummy target to prevent make from interpreting subcommands as targets
 # This allows commands like "make rails db:migrate" to work correctly

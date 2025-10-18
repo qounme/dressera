@@ -1,0 +1,4 @@
+# Use the default configuration provided by the official erb_lint
+# https://github.com/Shopify/erb_lint?tab=readme-ov-file#linters
+# No additional configuration is required
+

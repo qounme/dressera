@@ -1,4 +1,4 @@
-.PHONY: help build run bundle rails setup biome
+.PHONY: help build run bundle rails setup biome prettier
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -33,6 +33,9 @@ setup: ## Setup host environment for editor support (creates separate lockfile i
 
 biome: ## Format and lint JS/CSS files with Biome
 	npx @biomejs/biome check --write .
+
+prettier: ## Format files with Prettier (except JS/CSS)
+	npx prettier --write .
 
 # Dummy target to prevent make from interpreting subcommands as targets
 # This allows commands like "make rails db:migrate" to work correctly

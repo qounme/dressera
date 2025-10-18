@@ -1,0 +1,4 @@
+# Exclude CSS and JavaScript files from Prettier formatting.
+# These file types are handled by Biome.
+**/*.css
+**/*.js

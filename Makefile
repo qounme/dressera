@@ -1,4 +1,4 @@
-.PHONY: help build run bundle rails setup biome prettier
+.PHONY: help build run bundle rails setup rubocop erblint biome prettier
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -30,6 +30,12 @@ setup: ## Setup host environment for editor support (creates separate lockfile i
 	bundle config set --local lockfile .bundle/Gemfile_host.lock
 	cp Gemfile.lock .bundle/Gemfile_host.lock
 	bundle install
+
+rubocop: ## Run RuboCop with auto-correct
+	bundle exec rubocop --autocorrect .
+
+erblint: ## Run ERB Lint with auto-correct
+	bundle exec erblint --autocorrect .
 
 biome: ## Format and lint JS/CSS files with Biome
 	npx @biomejs/biome check --write .

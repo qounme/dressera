@@ -45,6 +45,10 @@ mount_option := "type=bind,source=" + justfile_directory() + ",target=/rails"
 @lint-biome *args=justfile_directory():
     npm run biome:check "$@"
 
+# Lint code using Prettier
+@lint-prettier:
+    npm run prettier -- --check "**/*.md" "**/*.toml" "**/*.yml"
+
 # Formatting recipes
 
 # Format code using RuboCop
@@ -61,3 +65,7 @@ mount_option := "type=bind,source=" + justfile_directory() + ",target=/rails"
 [positional-arguments]
 @format-biome *args=justfile_directory():
     npm run biome:check -- --fix "$@"
+
+# Format code using Prettier
+@format-prettier:
+    npm run prettier -- --write "**/*.md" "**/*.toml" "**/*.yml"

@@ -9,6 +9,7 @@
   "scripts": {
     "biome:check": "biome check",
     "herb:format": "herb-format",
-    "herb:lint": "herb-lint"
+    "herb:lint": "herb-lint",
+    "prettier": "prettier"
   }
 }

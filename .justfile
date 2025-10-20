@@ -26,3 +26,17 @@ mount_option := "type=bind,source=" + justfile_directory() + ",target=/rails"
 [positional-arguments]
 @container-rails +args:
     just container bin/rails "$@"
+
+# Linting recipes
+
+# Lint code using RuboCop
+[positional-arguments]
+@lint-rubocop *args=justfile_directory():
+    bundle exec rubocop -S "$@"
+
+# Formatting recipes
+
+# Format code using RuboCop
+[positional-arguments]
+@format-rubocop *args=justfile_directory():
+    bundle exec rubocop -S -a "$@"

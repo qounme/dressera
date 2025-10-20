@@ -29,6 +29,9 @@ mount_option := "type=bind,source=" + justfile_directory() + ",target=/rails"
 
 # Linting recipes
 
+# Lint all code
+lint-all: lint-rubocop lint-herb lint-biome lint-prettier
+
 # Lint code using RuboCop
 [positional-arguments]
 @lint-rubocop *args=justfile_directory():
@@ -50,6 +53,9 @@ mount_option := "type=bind,source=" + justfile_directory() + ",target=/rails"
     npm run prettier -- --check "**/*.md" "**/*.toml" "**/*.yml"
 
 # Formatting recipes
+
+# Format all code
+format-all: format-rubocop format-herb format-biome format-prettier
 
 # Format code using RuboCop
 [positional-arguments]

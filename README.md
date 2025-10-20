@@ -5,7 +5,7 @@ A Ruby on Rails application for managing wardrobe and outfit coordination.
 ## Requirements
 
 * Docker
-* Docker Compose (optional, but recommended)
+* just (optional, but recommended for easier command execution)
 
 ## Ruby and Rails Version
 
@@ -17,6 +17,28 @@ A Ruby on Rails application for managing wardrobe and outfit coordination.
 This project uses Docker for development to ensure a consistent environment across different machines.
 
 ### Quick Start
+
+#### Using just (Recommended)
+
+1. Clone the repository
+```bash
+git clone <repository-url>
+cd dressera
+```
+
+2. Build the Docker image
+```bash
+just build
+```
+
+3. Run the application
+```bash
+just run
+```
+
+4. Access the application at http://localhost:3000
+
+#### Using Docker directly
 
 1. Clone the repository
 ```bash
@@ -31,7 +53,7 @@ docker build -f Dockerfile.dev -t dressera-dev .
 
 3. Run the application
 ```bash
-docker run -it --rm -p 3000:3000 --mount type=bind,source=$(pwd),target=/rails dressera-dev
+docker run -it --rm -p 3000:3000 --mount type=bind,source=$(pwd),target=/rails --name dressera dressera-dev
 ```
 
 4. Access the application at http://localhost:3000

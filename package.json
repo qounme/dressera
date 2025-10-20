@@ -5,6 +5,7 @@
     "@herb-tools/linter": "0.7.5"
   },
   "scripts": {
+    "biome:check": "biome check",
     "herb:format": "herb-format",
     "herb:lint": "herb-lint"
   }

@@ -40,6 +40,11 @@ mount_option := "type=bind,source=" + justfile_directory() + ",target=/rails"
     npm run herb:lint "$@"
     npm run herb:format -- --check --indent-width 3 --max-line-length 120 "$@"
 
+# Lint code using Biome
+[positional-arguments]
+@lint-biome *args=justfile_directory():
+    npm run biome:check "$@"
+
 # Formatting recipes
 
 # Format code using RuboCop
@@ -51,3 +56,8 @@ mount_option := "type=bind,source=" + justfile_directory() + ",target=/rails"
 [positional-arguments]
 @format-herb *args=justfile_directory():
     npm run herb:format -- --indent-width 3 --max-line-length 120 "$@"
+
+# Format code using Biome
+[positional-arguments]
+@format-biome *args=justfile_directory():
+    npm run biome:check -- --fix "$@"

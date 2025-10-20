@@ -1,5 +1,5 @@
 {
-  "printWidth": 120,
-  "tabWidth": 3,
-  "plugins": ["prettier-plugin-toml"]
+   "printWidth": 120,
+   "tabWidth": 3,
+   "plugins": ["prettier-plugin-toml"]
 }

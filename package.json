@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@biomejs/biome": "2.2.6",
     "@herb-tools/formatter": "0.7.5",
     "@herb-tools/linter": "0.7.5"
   },

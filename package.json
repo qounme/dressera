@@ -2,5 +2,9 @@
   "devDependencies": {
     "@herb-tools/formatter": "0.7.5",
     "@herb-tools/linter": "0.7.5"
+  },
+  "scripts": {
+    "herb:format": "herb-format",
+    "herb:lint": "herb-lint"
   }
 }

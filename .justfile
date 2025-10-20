@@ -34,9 +34,20 @@ mount_option := "type=bind,source=" + justfile_directory() + ",target=/rails"
 @lint-rubocop *args=justfile_directory():
     bundle exec rubocop -S "$@"
 
+# Lint code using Herb
+[positional-arguments]
+@lint-herb *args=justfile_directory():
+    npm run herb:lint "$@"
+    npm run herb:format -- --check --indent-width 3 --max-line-length 120 "$@"
+
 # Formatting recipes
 
 # Format code using RuboCop
 [positional-arguments]
 @format-rubocop *args=justfile_directory():
     bundle exec rubocop -S -a "$@"
+
+# Format code using Herb
+[positional-arguments]
+@format-herb *args=justfile_directory():
+    npm run herb:format -- --indent-width 3 --max-line-length 120 "$@"

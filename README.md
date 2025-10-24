@@ -4,13 +4,13 @@ A Ruby on Rails application for managing wardrobe and outfit coordination.
 
 ## Requirements
 
-* Docker
-* just (optional, but recommended for easier command execution)
+- Docker
+- just (optional, but recommended for easier command execution)
 
 ## Ruby and Rails Version
 
-* Ruby 3.3.9
-* Rails 8.0.3
+- Ruby 3.3.9
+- Rails 8.0.3
 
 ## Development Environment Setup
 
@@ -21,17 +21,20 @@ This project uses Docker for development to ensure a consistent environment acro
 #### Using just (Recommended)
 
 1. Clone the repository
+
 ```bash
 git clone <repository-url>
 cd dressera
 ```
 
 2. Build the Docker image
+
 ```bash
 just build
 ```
 
 3. Run the application
+
 ```bash
 just run
 ```
@@ -41,17 +44,20 @@ just run
 #### Using Docker directly
 
 1. Clone the repository
+
 ```bash
 git clone <repository-url>
 cd dressera
 ```
 
 2. Build the Docker image
+
 ```bash
 docker build -f Dockerfile.dev -t dressera-dev .
 ```
 
 3. Run the application
+
 ```bash
 docker run -it --rm -p 3000:3000 --mount type=bind,source=$(pwd),target=/rails --name dressera dressera-dev
 ```
@@ -60,9 +66,9 @@ docker run -it --rm -p 3000:3000 --mount type=bind,source=$(pwd),target=/rails -
 
 ### Configuration Files
 
-* `.railsrc` - Rails application generator options
-* `Dockerfile.dev` - Development environment Docker configuration
-* `Procfile.dev` - Development processes (Rails server and Tailwind CSS watcher)
+- `.railsrc` - Rails application generator options
+- `Dockerfile.dev` - Development environment Docker configuration
+- `Procfile.dev` - Development processes (Rails server and Tailwind CSS watcher)
 
 ## Database
 
@@ -70,9 +76,9 @@ This project uses SQLite3 for development. The database is automatically created
 
 ## Services
 
-* **Tailwind CSS** - Utility-first CSS framework with automatic compilation via `bin/rails tailwindcss:watch`
-* **Importmap** - JavaScript module management without bundling
-* **Turbo & Stimulus** - Hotwire framework for building modern web applications
+- **Tailwind CSS** - Utility-first CSS framework with automatic compilation via `bin/rails tailwindcss:watch`
+- **Importmap** - JavaScript module management without bundling
+- **Turbo & Stimulus** - Hotwire framework for building modern web applications
 
 ## Development
 

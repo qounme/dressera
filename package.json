@@ -1,0 +1,15 @@
+{
+   "devDependencies": {
+      "@biomejs/biome": "2.2.6",
+      "@herb-tools/formatter": "0.7.5",
+      "@herb-tools/linter": "0.7.5",
+      "prettier": "3.6.2",
+      "prettier-plugin-toml": "2.0.6"
+   },
+   "scripts": {
+      "biome:check": "biome check",
+      "herb:format": "herb-format",
+      "herb:lint": "herb-lint",
+      "prettier": "prettier"
+   }
+}

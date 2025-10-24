@@ -1,8 +1,63 @@
-# Omakase Ruby styling for Rails
-inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+plugins:
+   - rubocop-performance
+   - rubocop-rails
 
-# Overwrite or add rules to create your own house style
-#
-# # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
-# Layout/SpaceInsideArrayLiteralBrackets:
-#   Enabled: false
+AllCops:
+   NewCops: enable
+
+################# Bundler ##################
+# Using default settings
+
+################# Gemspec ##################
+Gemspec:
+   Enabled: false
+
+################# Layout ###################
+Layout/ClassStructure:
+   Enabled: true
+
+Layout/EndAlignment:
+   EnforcedStyleAlignWith: variable
+
+Layout/IndentationWidth:
+   Width: 3
+
+################# Lint #####################
+Lint/ShadowingOuterLocalVariable:
+   Enabled: true
+
+################# Metrics ##################
+# Using default settings
+
+################# Migration ################
+# Using default settings
+
+################# Naming ###################
+# Using default settings
+
+################# Performance ##############
+Performance/SelectMap:
+   Enabled: true
+
+################# Rails ####################
+Rails/DefaultScope:
+   Enabled: true
+
+Rails/OrderById:
+   Enabled: true
+
+Rails/PluckId:
+   Enabled: true
+
+################# Security #################
+# Using default settings
+
+################# Style ####################
+Style/Documentation:
+   Enabled: false
+
+Style/Send:
+   Enabled: true
+
+Style/UnlessLogicalOperators:
+   Enabled: true

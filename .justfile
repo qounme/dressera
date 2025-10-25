@@ -7,11 +7,13 @@
 # Container recipes
 
 image := "dressera-dev"
-mount_option := "type=bind,source=" + justfile_directory() + ",target=/rails"
+gems_volume := "dressera-gems"
+bind_mount_option := "type=bind,source=" + justfile_directory() + ",target=/rails"
+volume_mount_option := "type=volume,source=" + gems_volume + ",target=/usr/local/bundle"
 
 # Run the development container
 @run:
-    docker run -it --rm -p 3000:3000 --mount {{ mount_option }} --name dressera {{ image }}
+    docker run -it --rm -p 3000:3000 --mount {{ bind_mount_option }} --mount {{ volume_mount_option }} --name dressera {{ image }}
 
 # Build the Docker image for development
 @build:
@@ -20,7 +22,7 @@ mount_option := "type=bind,source=" + justfile_directory() + ",target=/rails"
 # Run command in container
 [positional-arguments]
 @container +args:
-    docker run --rm --mount {{ mount_option }} {{ image }} "$@"
+    docker run --rm --mount {{ bind_mount_option }} --mount {{ volume_mount_option }} {{ image }} "$@"
 
 # Run rails command in container
 [positional-arguments]
